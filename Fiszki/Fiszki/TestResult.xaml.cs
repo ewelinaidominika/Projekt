@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace Fiszki
 {
-    /// <summary>
-    /// Logika interakcji dla klasy TestResult.xaml
-    /// </summary>
     public partial class TestResult : Page
     {
         #region private members
@@ -93,7 +90,7 @@ namespace Fiszki
         #endregion
 
         #region private methods
-        #region shows time of test
+        #region shows how much time the test took
         private void TimeOut(string TimeTest)
         {
             Time.Text = this.TimeTest;
@@ -102,6 +99,10 @@ namespace Fiszki
         #endregion
 
         #region show result of test
+        /// <summary>
+        /// Shows results of test.
+        /// </summary>
+        /// <param name="value">The value.</param>
         private void ResultOfTest(int value)
         {
             this.points = this.plusTestPoints - this.minusTestPoints;
@@ -138,22 +139,47 @@ namespace Fiszki
         #endregion
 
         #region menu buttons
+        /// <summary>
+        /// Handles the Click event of the SetTrainingMode control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void SetTrainingMode_Click(object sender, RoutedEventArgs e)
         {
             setPage = new SetPage(1, MessageBoxResult.Yes);
         }
+        /// <summary>
+        /// Handles the Click event of the AddNewWord control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void AddNewWord_Click(object sender, RoutedEventArgs e)
         {
             setPage = new SetPage(3, MessageBoxResult.Yes);
         }
+        /// <summary>
+        /// Handles the Click event of the AddNewCategory control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void AddNewCategory_Click(object sender, RoutedEventArgs e)
         {
             setPage = new SetPage(4, MessageBoxResult.Yes);
         }
+        /// <summary>
+        /// Handles the Click event of the BackToMainPage control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void BackToMainPage_Click(object sender, RoutedEventArgs e)
         {
             setPage = new SetPage(5, MessageBoxResult.Yes);
         }
+        /// <summary>
+        /// Handles the Click event of the Exit control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz opuścić program?", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);

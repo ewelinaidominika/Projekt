@@ -16,9 +16,6 @@ using System.IO;
 
 namespace Fiszki
 {
-    /// <summary>
-    /// Logika interakcji dla klasy TrainingMode.xaml
-    /// </summary>
     public partial class TrainingMode : Page
     {
         #region constructor
@@ -28,7 +25,7 @@ namespace Fiszki
             nameOfCategory = _category.EnglishName;
             polishNameOfCategory = _category.PolishName;
 
-            LoadFile();
+            InitializeWordsLoading();
             PageContent();
         }
         #endregion
@@ -86,8 +83,12 @@ namespace Fiszki
         #endregion
 
         #region private methods
-        #region load file and words
-        private void LoadFile()
+        #region load words from file
+
+        /// <summary>
+        /// Initializes the words loading.
+        /// </summary>
+        private void InitializeWordsLoading()
         {
             string foo = "..\\..\\";
             string foo2 = ".txt";
@@ -95,6 +96,10 @@ namespace Fiszki
             LoadWords(source);
         }
 
+        /// <summary>
+        /// Loads the words.
+        /// </summary>
+        /// <param name="source">The source.</param>
         private void LoadWords(string source)
         {
             Encoding enc = Encoding.Default;
@@ -149,6 +154,9 @@ namespace Fiszki
         #endregion
 
         #region show and update content of page
+        /// <summary>
+        /// Shows the content of the page.
+        /// </summary>
         private void PageContent()
         {
             string numberOfQuestion = page.ToString();
@@ -181,6 +189,11 @@ namespace Fiszki
         #endregion
 
         #region continue button
+        /// <summary>
+        /// Handles the Click event of the ContinueButton control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void ContinueButton_Click(object sender, RoutedEventArgs e)
         {
             if(page != numberOfWords)
@@ -201,27 +214,51 @@ namespace Fiszki
         #endregion
 
         #region menu buttons
+        /// <summary>
+        /// Handles the Click event of the SetTestMode control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void SetTestMode_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz opuścić trening i przejść do trybu testu?", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
             setPage = new SetPage(2, result);
         }
+        /// <summary>
+        /// Handles the Click event of the AddNewWord control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void AddNewWord_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz opuścić trening i przejść do tworzenia własnego słowa?", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
             setPage = new SetPage(3, result);
         }
-        
+        /// <summary>
+        /// Handles the Click event of the AddNewCategory control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void AddNewCategory_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz opuścić trening i przejść do dodawania nowej kategorii?", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
             setPage = new SetPage(4, result);
         }
+        /// <summary>
+        /// Handles the Click event of the BackToMainPage control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void BackToMainPage_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz opuścić trening i wrócić do strony głównej?", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
             setPage = new SetPage(5, result);
         }
+        /// <summary>
+        /// Handles the Click event of the Exit control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz opuścić program?", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
@@ -230,6 +267,11 @@ namespace Fiszki
         #endregion
 
         #region translation button
+        /// <summary>
+        /// Handles the Click event of the TranslationButton control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void TranslationButton_Click(object sender, RoutedEventArgs e)
         {
             if(whichPage % 2 == 1)
@@ -248,6 +290,11 @@ namespace Fiszki
         #endregion
 
         #region go to word that user selected from GoToWordComboBox
+        /// <summary>
+        /// Handles the Click event of the GoToWordButton control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void GoToWordButton_Click(object sender, RoutedEventArgs e)
         {
             if(GoToWordComboBox.SelectedItem == null)

@@ -17,9 +17,6 @@ using Microsoft.Win32;
 
 namespace Fiszki
 {
-    /// <summary>
-    /// Logika interakcji dla klasy AddNewWord.xaml
-    /// </summary>
     public partial class AddNewWord : Page
     {
         #region constructor
@@ -210,6 +207,9 @@ namespace Fiszki
         #endregion
 
         #region if user didn't select his own image, use default image.
+        /// <summary>
+        /// Adds the default image.
+        /// </summary>
         private void AddDefaultImage()
         {
             nameOfCategory = ((ComboBoxItem)CategoryComboBox.SelectedItem).Name;
@@ -243,6 +243,9 @@ namespace Fiszki
         #endregion
 
         #region if user selected his own image, use it.
+        /// <summary>
+        /// Adds the users image.
+        /// </summary>
         private void AddUsersImage()
         {
             nameOfCategory = ((ComboBoxItem)CategoryComboBox.SelectedItem).Name;
@@ -280,7 +283,7 @@ namespace Fiszki
 
         #region menu buttons
         /// <summary>
-        /// These methods are using setPage object to switch pages after clicking a menu button
+        /// These methods are using setPage object to switch pages after clicking a menu button.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -289,21 +292,41 @@ namespace Fiszki
             MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz opuścić dodawanie nowego słowa i przejść do trybu treningu? Żadne dokonane zmiany nie zostaną zapisane.", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
             setPage = new SetPage(1, result);
         }
+        /// <summary>
+        /// Handles the Click event of the SetTestMode control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void SetTestMode_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz opuścić dodawanie słowa i przejść do trybu testu? Żadne dokonane zmiany nie zostaną zapisane.", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
             setPage = new SetPage(2, result);
         }
+        /// <summary>
+        /// Handles the Click event of the AddNewCategoryButton control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void AddNewCategoryButton_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz opuścić dodawanie nowego słowa i przejść do dodawania nowej kategorii? Żadne zmiany nie zostaną zapisane.", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question);
             setPage = new SetPage(4, result);
         }
+        /// <summary>
+        /// Handles the Click event of the BackToMainPage control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void BackToMainPage_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz opuścić dodawanie słowa i wrócić do strony głównej? Żadne dokonane zmiany nie zostaną zapisane.", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
             setPage = new SetPage(5, result);
         }
+        /// <summary>
+        /// Handles the Click event of the Exit control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz opuścić program?", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
@@ -313,15 +336,20 @@ namespace Fiszki
 
         #region textboxes
         /// <summary>
-        /// These methods are cleaning textboxes when user is clicking on them.
+        /// Handles the GotFocus event of the PolishWordTextBox control.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void PolishWordTextBox_GotFocus(object sender, RoutedEventArgs e)
         {
             PolishWordTextBox.Text = string.Empty;
             PolishWordTextBox.GotFocus -= PolishWordTextBox_GotFocus;
         }
+        /// <summary>
+        /// Handles the GotFocus event of the EnglishWordTextBox control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void EnglishWordTextBox_GotFocus(object sender, RoutedEventArgs e)
         {
             EnglishWordTextBox.Text = string.Empty;

@@ -16,9 +16,6 @@ using System.IO;
 
 namespace Fiszki
 {
-    /// <summary>
-    /// Logika interakcji dla klasy MainPage.xaml
-    /// </summary>
     public partial class MainPage : Page
     {
         #region constructor
@@ -48,18 +45,38 @@ namespace Fiszki
             setPage = new SetPage(1, MessageBoxResult.Yes);
         }
 
+        /// <summary>
+        /// Handles the Click event of the SetTestMode control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void SetTestMode_Click(object sender, RoutedEventArgs e)
         {
             setPage = new SetPage(2, MessageBoxResult.Yes);
         }
+        /// <summary>
+        /// Handles the Click event of the AddNewWord control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void AddNewWord_Click(object sender, RoutedEventArgs e)
         {
             setPage = new SetPage(3, MessageBoxResult.Yes);
         }
+        /// <summary>
+        /// Handles the Click event of the AddNewCategoryButton control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void AddNewCategoryButton_Click(object sender, RoutedEventArgs e)
         {
             setPage = new SetPage(4, MessageBoxResult.Yes);
         }
+        /// <summary>
+        /// Handles the Click event of the Exit control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             setPage = new SetPage(6, MessageBoxResult.Yes);

@@ -18,9 +18,6 @@ using System.Windows.Threading;
 
 namespace Fiszki
 {
-    /// <summary>
-    /// Logika interakcji dla klasy TestMode.xaml
-    /// </summary>
     public partial class TestMode : Page
     {
         #region private members
@@ -139,6 +136,9 @@ namespace Fiszki
 
         #region private methods
         #region initialize test
+        /// <summary>
+        /// Initializes the test.
+        /// </summary>
         private void InitializeTest()
         {
             initialize += (() => { QuestionValue(0); } );
@@ -192,7 +192,7 @@ namespace Fiszki
 
         #region end test button
         /// <summary>
-        /// This method ends test after clicking End_Test button.
+        /// Ends test after clicking End_Test button.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -213,7 +213,7 @@ namespace Fiszki
 
         #region next question button
         /// <summary>
-        /// This method shows next question of test after clicking NextQuestion button.
+        /// Shows next question of test after clicking NextQuestion button.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -246,7 +246,7 @@ namespace Fiszki
 
         #region timer
         /// <summary>
-        /// These methods set timer's properties needed for the correct work of timer. 
+        /// Set timer's properties needed for the correct work of timer. 
         /// </summary>
         public void DispatcherTimer()
         {
@@ -304,13 +304,13 @@ namespace Fiszki
 
         #region check, if user wrote a translation correctly after clicking a CheckButton
         /// <summary>
-        /// This method lets user know if he answered a question correctly.
+        /// Lets user know if he answered a question correctly.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void CheckButton_Click(object sender, RoutedEventArgs e)
         {
-            if (EnglishWord.Text == tabEnglish[number - 1])
+            if(EnglishWord.Text == "")
             {
                 MessageBox.Show("Wprowadź najpierw tłumaczenie słowa!", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Error, MessageBoxResult.OK);
             }
@@ -340,36 +340,56 @@ namespace Fiszki
 
         #region menu buttons
         /// <summary>
-        /// These methods are using setPage object to switch pages after clicking a menu button.
+        /// Handles the Click event of the SetTrainingMode control.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void SetTrainingMode_Click(object sender, RoutedEventArgs e)
-            {
-                MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz opuścić test i przejść do trybu treningu? Postęp testu nie zostanie zapisany.", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
-                setPage = new SetPage(1, result);
-            }
-            private void AddNewWord_Click(object sender, RoutedEventArgs e)
-            {
-                MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz opuścić test i przejść do dodawania nowego słowa? Postęp testu nie zostanie zapisany.", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
-                setPage = new SetPage(3, result);
-            }
-            private void AddNewCategory_Click(object sender, RoutedEventArgs e)
-            {
-                MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz opuścić test i przejść do dodawania nowej kategorii? Postęp testu nie zostanie zapisany.", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
-                setPage = new SetPage(4, result);
-            }
-            private void BackToMainPage_Click(object sender, RoutedEventArgs e)
-            {
-                MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz opuścić test i przejść do strony głównej? Postęp testu nie zostanie zapisany.", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
-                setPage = new SetPage(5, result);
-            }
-            private void Exit_Click(object sender, RoutedEventArgs e)
-            {
-                MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz opuścić program?", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
-                setPage = new SetPage(6, result);
-            }
-            #endregion
+        {
+            MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz opuścić test i przejść do trybu treningu? Postęp testu nie zostanie zapisany.", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
+            setPage = new SetPage(1, result);
+        }
+        /// <summary>
+        /// Handles the Click event of the AddNewWord control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void AddNewWord_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz opuścić test i przejść do dodawania nowego słowa? Postęp testu nie zostanie zapisany.", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
+            setPage = new SetPage(3, result);
+        }
+        /// <summary>
+        /// Handles the Click event of the AddNewCategory control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void AddNewCategory_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz opuścić test i przejść do dodawania nowej kategorii? Postęp testu nie zostanie zapisany.", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
+            setPage = new SetPage(4, result);
+        }
+        /// <summary>
+        /// Handles the Click event of the BackToMainPage control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void BackToMainPage_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz opuścić test i przejść do strony głównej? Postęp testu nie zostanie zapisany.", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
+            setPage = new SetPage(5, result);
+        }
+        /// <summary>
+        /// Handles the Click event of the Exit control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz opuścić program?", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
+            setPage = new SetPage(6, result);
+        }
+        #endregion
         #endregion
     }
 }

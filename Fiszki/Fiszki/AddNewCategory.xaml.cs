@@ -17,9 +17,6 @@ using Microsoft.Build;
 
 namespace Fiszki
 {
-    /// <summary>
-    /// Logika interakcji dla klasy AddNewCategory.xaml
-    /// </summary>
     public partial class AddNewCategory : Page
     {
         #region constructor
@@ -138,15 +135,20 @@ namespace Fiszki
 
         #region textboxes
         /// <summary>
-        /// These methods are cleaning textboxes when user is clicking on them.
+        /// Handles the GotFocus event of the PolishNameTextBox control.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void PolishNameTextBox_GotFocus(object sender, RoutedEventArgs e)
         {
             PolishNameTextBox.Text = string.Empty;
             PolishNameTextBox.GotFocus -= PolishNameTextBox_GotFocus;
         }
+        /// <summary>
+        /// Handles the GotFocus event of the EnglishNameTextBox control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void EnglishNameTextBox_GotFocus(object sender, RoutedEventArgs e)
         {
             EnglishNameTextBox.Text = string.Empty;

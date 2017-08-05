@@ -140,6 +140,13 @@ namespace Fiszki
 
         #region private methods
         #region complete arrays with randomized words
+        /// <summary>
+        /// Randoms the words.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <param name="tabPolish">The tab polish.</param>
+        /// <param name="tabEnglish">The tab english.</param>
+        /// <param name="categoryTab">The category tab.</param>
         private void RandomWords(int id, string[] tabPolish, string[] tabEnglish, string[] categoryTab)
         {
             LoadWords(id, categoryTab);
@@ -159,9 +166,14 @@ namespace Fiszki
                     i--;
             }
         }
-    #endregion
+        #endregion
 
         #region load all the words of category that was selected to arrays
+        /// <summary>
+        /// Loads the words.
+        /// </summary>
+        /// <param name="index">The index.</param>
+        /// <param name="categoryTab">The category tab.</param>
         private void LoadWords(int index, string[] categoryTab)
         {
             string name = categoryTab[index].ToLower();
@@ -210,9 +222,17 @@ namespace Fiszki
                 MessageBox.Show(ex.ToString());
             }
         }
-    #endregion
+        #endregion
 
         #region combine all word arrays into one 
+        /// <summary>
+        /// Combines the tab.
+        /// </summary>
+        /// <param name="tabAnimals">The tab animals.</param>
+        /// <param name="tabFruits">The tab fruits.</param>
+        /// <param name="tabAppearance">The tab appearance.</param>
+        /// <param name="tabProfessions">The tab professions.</param>
+        /// <returns></returns>
         private string[] CombineTab(string[] tabAnimals, string[] tabFruits, string[] tabAppearance, string[] tabProfessions)
         {
             string[] _tab = new string[tabAnimals.Length + tabFruits.Length + tabAppearance.Length + tabProfessions.Length];

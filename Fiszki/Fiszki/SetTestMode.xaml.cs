@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace Fiszki
 {
-    /// <summary>
-    /// Logika interakcji dla klasy SetTestMode.xaml
-    /// </summary>
     public partial class SetTestMode : Page
     {
         #region private members
@@ -88,42 +85,77 @@ namespace Fiszki
             this.value += 10;
             TextOutput(value);
         }
+        /// <summary>
+        /// Handles the Unchecked event of the FruitsCheckBox control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void FruitsCheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
             this.categoryTab[0] = null;
             this.value -= 10;
             TextOutput(value);
         }
+        /// <summary>
+        /// Handles the Checked event of the AnimalsCheckBox control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void AnimalsCheckBox_Checked(object sender, RoutedEventArgs e)
         {
             this.categoryTab[1] = "Animals";
             this.value += 10;
             TextOutput(value);
         }
+        /// <summary>
+        /// Handles the Unchecked event of the AnimalsCheckBox control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void AnimalsCheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
             this.categoryTab[1] = null;
             this.value -= 10;
             TextOutput(value);
         }
+        /// <summary>
+        /// Handles the Checked event of the AppearanceCheckBox control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void AppearanceCheckBox_Checked(object sender, RoutedEventArgs e)
         {
             this.categoryTab[2] = "Appearance";
             this.value += 10;
             TextOutput(value);
         }
+        /// <summary>
+        /// Handles the Unchecked event of the AppearanceCheckBox control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void AppearanceCheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
             this.categoryTab[2] = null;
             this.value -= 10;
             TextOutput(value);
         }
+        /// <summary>
+        /// Handles the Checked event of the ProfessionsCheckBox control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void ProfessionsCheckBox_Checked(object sender, RoutedEventArgs e)
         {
             this.categoryTab[3] = "Profession";
             this.value += 10;
             TextOutput(value);
         }
+        /// <summary>
+        /// Handles the Unchecked event of the ProfessionsCheckBox control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void ProfessionsCheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
             this.categoryTab[3] = null;
@@ -156,21 +188,41 @@ namespace Fiszki
             MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz anulować przejście do testu i przejść do trybu treningu?", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
             setPage = new SetPage(1, result);
         }
+        /// <summary>
+        /// Handles the Click event of the AddNewWord control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void AddNewWord_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz anulować przejście do testu i przejść do dodawania nowego słowa?", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
             setPage = new SetPage(3, result);
         }
+        /// <summary>
+        /// Handles the Click event of the AddNewCategory control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void AddNewCategory_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz anulować przejście do testu i przejść do dodawania nowej kategorii?", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
             setPage = new SetPage(4, result);
         }
+        /// <summary>
+        /// Handles the Click event of the BackToMainPage control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void BackToMainPage_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz anulować przejście do testu i przejść do strony głównej?", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
             setPage = new SetPage(5, result);
         }
+        /// <summary>
+        /// Handles the Click event of the Exit control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz opuścić program?", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
