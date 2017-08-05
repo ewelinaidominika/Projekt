@@ -310,23 +310,31 @@ namespace Fiszki
         /// <param name="e"></param>
         private void CheckButton_Click(object sender, RoutedEventArgs e)
         {
-        IsChecked = true;
             if (EnglishWord.Text == tabEnglish[number - 1])
             {
-                plusTestPoints += 1;
-                Result.Text = "Poprawnie!";
-                Result.Foreground = Brushes.Green;
-                EnglishWord.IsReadOnly = true;
+                MessageBox.Show("Wprowadź najpierw tłumaczenie słowa!", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Error, MessageBoxResult.OK);
             }
-
             else
             {
-                minusTestPoints += 1;
-                Result.Text = "Źle!";
-                Result.Foreground = Brushes.Red;
-                EnglishWord.IsReadOnly = true;
+                IsChecked = true;
+                if (EnglishWord.Text == tabEnglish[number - 1])
+                {
+                    plusTestPoints += 1;
+                    Result.Text = "Poprawnie!";
+                    Result.Foreground = Brushes.Green;
+                    EnglishWord.IsReadOnly = true;
+                }
+
+                else
+                {
+                    minusTestPoints += 1;
+                    Result.Text = "Źle!";
+                    Result.Foreground = Brushes.Red;
+                    EnglishWord.IsReadOnly = true;
+                }
+                CheckButton.IsEnabled = false;
             }
-            CheckButton.IsEnabled = false;
+            
         }
         #endregion
 
