@@ -1,0 +1,43 @@
+﻿<Page x:Class="Fiszki.SetTestMode"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Fiszki"
+      mc:Ignorable="d" 
+      Height="500" Width="900"
+      Title="SetTestMode">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="197*"/>
+            <ColumnDefinition Width="704*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="0.094"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <Canvas Grid.Column="1" HorizontalAlignment="Left" Height="501" VerticalAlignment="Top" Width="28">
+            <Line X1="0" Y1="0" X2="0" Y2="500" Stroke="Gray" StrokeThickness="3"></Line>
+            <Line X1="5" Y1="0" X2="5" Y2="500" Stroke="Gray" StrokeThickness="3"></Line>
+        </Canvas>
+        <Button x:Name="SetTrainingMode" Content="Tryb treningu" HorizontalAlignment="Left" Height="40" Margin="10,87,0,0" VerticalAlignment="Top" Width="172" FontSize="20" Click="SetTrainingMode_Click"/>
+        <Button x:Name="BackToMainPage" Content="Strona główna" HorizontalAlignment="Left" Height="40" Margin="10,222,0,0" VerticalAlignment="Top" Width="172" FontSize="20" Click="BackToMainPage_Click"/>
+        <Button x:Name="Exit" Content="Wyjście" HorizontalAlignment="Left" Margin="10,267,0,0" VerticalAlignment="Top" Width="172" Height="40" FontSize="20" Click="Exit_Click"/>
+        <Button x:Name="AddNewWord" Content="Dodaj swoje słowo" HorizontalAlignment="Left" Height="40" Margin="10,132,0,0" VerticalAlignment="Top" Width="172" FontSize="20" Click="AddNewWord_Click"/>
+        <Button x:Name="AddNewCategory" Content="Dodaj kategorię" HorizontalAlignment="Left" Height="40" Margin="10,177,0,0" VerticalAlignment="Top" Width="172" FontSize="20" Click="AddNewCategory_Click"/>
+        <Label Content="TRYB TESTU" HorizontalAlignment="Left" Height="62" Margin="231.2,39,0,0" VerticalAlignment="Top" Width="280" FontSize="40" FontWeight="Bold" Padding="5" Grid.Column="1"/>
+        <Label Content="Kategoria" HorizontalAlignment="Left" Margin="154.2,127,0,0" VerticalAlignment="Top" Height="46" Width="150" FontSize="26" Grid.Column="1"/>
+        <Button x:Name="StartTest" Content="Rozpocznij" HorizontalAlignment="Left" Height="40" Margin="486.2,423,0,0" VerticalAlignment="Top" Width="172" FontSize="20" Click="StartTest_Click" Grid.Column="1"/>
+        <CheckBox x:Name="FruitsCheckBox" Content="Owoce" HorizontalAlignment="Left" Height="41" Margin="231.2,190,0,0" VerticalAlignment="Top" Width="142" FontSize="26" Unchecked="FruitsCheckBox_Unchecked" Checked="FruitsCheckBox_Checked" Grid.Column="1"/>
+        <CheckBox x:Name="AnimalsCheckBox" Content="Zwierzęta" HorizontalAlignment="Left" Height="41" Margin="231.2,240,0,0" VerticalAlignment="Top" Width="142" FontSize="26" Checked="AnimalsCheckBox_Checked" Unchecked="AnimalsCheckBox_Unchecked" Grid.Column="1"/>
+        <CheckBox x:Name="AppearanceCheckBox" Content="Wygląd" HorizontalAlignment="Left" Height="41" Margin="231.2,286,0,0" VerticalAlignment="Top" Width="142" FontSize="26" Checked="AppearanceCheckBox_Checked" Unchecked="AppearanceCheckBox_Unchecked" Grid.Column="1"/>
+        <CheckBox x:Name="ProfessionsCheckBox" Content="Zawody" HorizontalAlignment="Left" Height="41" Margin="231.2,332,0,0" VerticalAlignment="Top" Width="142" FontSize="26" Checked="ProfessionsCheckBox_Checked" Unchecked="ProfessionsCheckBox_Unchecked" Grid.Column="1"/>
+        <Label Content="Ilość pytań:" HorizontalAlignment="Left" Height="45" Margin="154.2,390,0,0" VerticalAlignment="Top" Width="142" FontSize="26" Grid.Column="1"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="301.2,395,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="48" FontSize="26" Grid.Column="1"/>
+    </Grid>
+</Page>

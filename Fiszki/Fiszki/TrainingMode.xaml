@@ -1,0 +1,55 @@
+﻿<Page x:Class="Fiszki.TrainingMode"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Fiszki"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="900"
+      Title="TrainingMode">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="197*"/>
+            <ColumnDefinition Width="704*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="0.094"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <Canvas Grid.Column="1" HorizontalAlignment="Left" Height="501" VerticalAlignment="Top" Width="28">
+            <Line X1="0" Y1="0" X2="0" Y2="500" Stroke="Gray" StrokeThickness="3"></Line>
+            <Line X1="5" Y1="0" X2="5" Y2="500" Stroke="Gray" StrokeThickness="3"></Line>
+        </Canvas>
+        <Button x:Name="BackToMainPage" Content="Strona główna" HorizontalAlignment="Left" Height="40" Margin="10,222,0,0" VerticalAlignment="Top" Width="172" Click="BackToMainPage_Click" FontSize="20"/>
+        <Button x:Name="SetTestMode" Content="Tryb testu" HorizontalAlignment="Left" Height="40" Margin="10,87,0,0" VerticalAlignment="Top" Width="172" FontSize="20" Click="SetTestMode_Click"/>
+        <Button x:Name="Exit" Content="Wyjście" HorizontalAlignment="Left" Margin="10,267,0,0" VerticalAlignment="Top" Width="172" Height="40" FontSize="20" Click="Exit_Click"/>
+        <Button x:Name="AddNewWord" Content="Dodaj swoje słowo"  HorizontalAlignment="Left" Height="40" Margin="10,132,0,0" VerticalAlignment="Top" Width="172" FontSize="20" Click="AddNewWord_Click"/>
+        <TextBlock x:Name="questionNumberTextBlock" Grid.Column="1" HorizontalAlignment="Left" Height="67" Margin="290.2,10,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="116" TextAlignment="Center" Padding="0, 20, 0, 0" FontSize="20" />
+        <Image x:Name="Image" Grid.Column="1" HorizontalAlignment="Left" Height="322" Margin="48,77,0,0" VerticalAlignment="Top" Width="308" Stretch="Uniform"/>
+        <TextBlock x:Name="wordTextBlock" Grid.Column="1" HorizontalAlignment="Left" Height="195" Margin="404,132,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="240" TextAlignment="Center" Padding="0, 70, 0, 0" FontSize="36">
+            <TextBlock.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="#FFECECEC" Offset="0.55"/>
+                </LinearGradientBrush>
+            </TextBlock.Background>
+        </TextBlock>
+        <Button x:Name="ContinueButton" Content="Dalej" Grid.Column="1" HorizontalAlignment="Left" Height="40" Margin="507.2,432,0,0" VerticalAlignment="Top" Width="172" FontSize="20" Click="ContinueButton_Click" RenderTransformOrigin="-0.248,-0.005"/>
+        <Canvas Grid.Column="1" HorizontalAlignment="Left" Height="501" VerticalAlignment="Top" Width="28">
+            <Line X1="0" Y1="0" X2="0" Y2="500" Stroke="Gray" StrokeThickness="3"></Line>
+            <Line X1="5" Y1="0" X2="5" Y2="500" Stroke="Gray" StrokeThickness="3"></Line>
+            <Label Content="Przejdź do słowa:" Height="29" Canvas.Left="28" Canvas.Top="462" Width="134" FontSize="16"/>
+        </Canvas>
+        <Button x:Name="TranslationButton" Content="Tłumaczenie" Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="426,332,0,0" VerticalAlignment="Top" Width="190" FontSize="20" Click="TranslationButton_Click"/>
+        <ComboBox x:Name="GoToWordComboBox" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="164,460,0,0" VerticalAlignment="Top" Width="102"/>
+        <Button x:Name="GoToWordButton" Content="Przejdź" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="271,460,0,0" VerticalAlignment="Top" Width="55" Click="GoToWordButton_Click"/>
+        <Button x:Name="AddNewCategory" Content="Dodaj kategorię" HorizontalAlignment="Left" Height="40" Margin="10,177,0,0" VerticalAlignment="Top" Width="172" FontSize="20" Click="AddNewCategory_Click"/>
+
+
+    </Grid>
+</Page>

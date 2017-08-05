@@ -1,0 +1,59 @@
+﻿<Page x:Class="Fiszki.AddNewWord"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Fiszki"
+      mc:Ignorable="d" 
+      Height="500" Width="900"
+      Title="AddNewWord">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="197*"/>
+            <ColumnDefinition Width="704*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="0.094"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <Canvas Grid.Column="1" HorizontalAlignment="Left" Height="501" VerticalAlignment="Top" Width="28">
+            <Line X1="0" Y1="0" X2="0" Y2="500" Stroke="Gray" StrokeThickness="3"></Line>
+            <Line X1="5" Y1="0" X2="5" Y2="500" Stroke="Gray" StrokeThickness="3"></Line>
+        </Canvas>
+        <Button x:Name="BackToMainPage" Content="Strona główna" HorizontalAlignment="Left" Height="40" Margin="10,222,0,0" VerticalAlignment="Top" Width="172" Click="BackToMainPage_Click" FontSize="20"/>
+        <Button x:Name="SetTestMode" Content="Tryb testu" HorizontalAlignment="Left" Height="40" Margin="10,87,0,0" VerticalAlignment="Top" Width="172" FontSize="20" Click="SetTestMode_Click"/>
+        <Button x:Name="Exit" Content="Wyjście" HorizontalAlignment="Left" Margin="10,267,0,0" VerticalAlignment="Top" Width="172" Height="40" FontSize="20" Click="Exit_Click"/>
+
+        <Label Content="DODAJ NOWE SŁOWO" HorizontalAlignment="Left" Height="72" Margin="127.2,39,0,0" VerticalAlignment="Top" Width="451" FontSize="40" FontWeight="Bold" Grid.Column="1"/>
+        <Label Content="Wybierz kategorię:" HorizontalAlignment="Left" Height="40" Margin="141.2,124,0,0" VerticalAlignment="Top" Width="240" FontSize="20" Grid.Column="1"/>
+        <ComboBox x:Name="CategoryComboBox" HorizontalAlignment="Left" Height="40" Margin="381.2,124,0,0" VerticalAlignment="Top" Width="162" Grid.Column="1">
+            <ComboBoxItem Name="Fruits">Owoce</ComboBoxItem>
+            <ComboBoxItem Name="Animals">Zwierzęta</ComboBoxItem>
+            <ComboBoxItem Name="Appearance">Wygląd</ComboBoxItem>
+            <ComboBoxItem Name="Profession">Zawody</ComboBoxItem>
+        </ComboBox>
+        <Label Content="Słowo po polsku:" HorizontalAlignment="Left" Height="42" Margin="143.2,164,0,0" VerticalAlignment="Top" Width="190" FontSize="20" Grid.Column="1"/>
+        <Label Content="Słowo po angielsku:" Height="38" Margin="143.2,205,0,0" VerticalAlignment="Top" FontSize="20" HorizontalAlignment="Left" Width="190" Grid.Column="1"/>
+        <TextBox x:Name="PolishWordTextBox" HorizontalAlignment="Left" Height="42" Margin="381.2,164,0,0" TextWrapping="Wrap" Text="Polski" VerticalAlignment="Top" Width="162" FontSize="18" Grid.Column="1" GotFocus="PolishWordTextBox_GotFocus"/>
+        <TextBox x:Name="EnglishWordTextBox" HorizontalAlignment="Left" Height="38" Margin="381.2,205,0,0" TextWrapping="Wrap" Text="Angielski" VerticalAlignment="Top" Width="162" FontSize="18" Grid.Column="1" GotFocus="EnglishWordTextBox_GotFocus"/>
+        <Label Content="Dodaj zdjęcie:" HorizontalAlignment="Left" Height="35" Margin="143.2,243,0,0" VerticalAlignment="Top" Width="190" FontSize="20" Grid.Column="1"/>
+        <Button x:Name="AddPhotoButton" Content="Dodaj" HorizontalAlignment="Left" Height="46" Margin="381.2,243,0,0" VerticalAlignment="Top" Width="162" FontSize="18" Click="AddPhotoButton_Click" Grid.Column="1"/>
+        <Label Content="Podgląd:" HorizontalAlignment="Left" Height="40" Margin="143.2,325,0,0" VerticalAlignment="Top" Width="84" FontSize="20" Grid.Column="1" RenderTransformOrigin="0.507,1.724" Foreground="#FF00A8FF"/>
+        <Image x:Name="photoPreview" HorizontalAlignment="Left" Height="102" Margin="141.2,365,0,0" VerticalAlignment="Top" Width="128" Grid.Column="1"/>
+        <Button x:Name="EndAddingNewWordButton" Content="Zakończ" HorizontalAlignment="Left" Height="40" Margin="481.2,427,0,0" VerticalAlignment="Top" Width="172" FontSize="24" Click="EndAddingNewWordButton_Click" Grid.Column="1"/>
+        <Button x:Name="SetTrainingMode" Content="Tryb treningu" HorizontalAlignment="Left" Height="40" Margin="10,132,0,0" VerticalAlignment="Top" Width="172" FontSize="20" Click="SetTrainingMode_Click"/>
+        <Label Grid.Column="1" HorizontalAlignment="Left" Height="42" Margin="171.2,278,0,0" VerticalAlignment="Top" Width="162">
+            <Label.Content>
+                <AccessText TextAlignment="Center" TextWrapping="Wrap" Text="Ważne - nazwa bitmapy nie może zawierać spacji!" RenderTransformOrigin="0.461,0.659" Foreground="#FFFF0202"/>
+            </Label.Content>
+        </Label>
+        <Button x:Name="ResetButton" Content="Reset" Grid.Column="1" HorizontalAlignment="Left" Height="40" Margin="481.2,387,0,0" VerticalAlignment="Top" Width="172" FontSize="24" Click="ResetButton_Click"/>
+        <Button x:Name="AddNewCategoryButton" Content="Dodaj kategorię" HorizontalAlignment="Left" Height="40" Margin="10,177,0,0" VerticalAlignment="Top" Width="172" FontSize="20" Click="AddNewCategoryButton_Click"/>
+
+    </Grid>
+</Page>

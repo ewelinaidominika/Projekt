@@ -1,0 +1,48 @@
+﻿<Page x:Class="Fiszki.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Fiszki"
+      mc:Ignorable="d" 
+      Height="500" Width="900"
+      Title="MainPage">
+
+    <Grid Margin="0,0,-1,-1" RenderTransformOrigin="0.5,0.5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="197*"/>
+            <ColumnDefinition Width="704*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="0.094"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <Button x:Name="SetTrainingMode" Content="Tryb treningu" HorizontalAlignment="Left" Height="40" Margin="10,87,0,0" VerticalAlignment="Top" Width="172" Click="SetTrainingMode_Click" FontSize="20"/>
+        <Button x:Name="SetTestMode" Content="Tryb testu" HorizontalAlignment="Left" Height="40" Margin="10,132,0,0" VerticalAlignment="Top" Width="172" FontSize="20" Click="SetTestMode_Click"/>
+        <Button x:Name="Exit" Content="Wyjście" HorizontalAlignment="Left" Margin="10,269,0,0" VerticalAlignment="Top" Width="172" Height="40" FontSize="20" Click="Exit_Click"/>
+        <Button x:Name="AddNewWord" Content="Dodaj swoje słowo" HorizontalAlignment="Left" Height="40" Margin="10,177,0,0" VerticalAlignment="Top" Width="172" FontSize="20" Click="AddNewWord_Click"/>
+        <Canvas Grid.Column="1" HorizontalAlignment="Left" Height="501" VerticalAlignment="Top" Width="28">
+            <Line X1="0" Y1="0" X2="0" Y2="500" Stroke="Gray" StrokeThickness="3"></Line>
+            <Line X1="5" Y1="0" X2="5" Y2="500" Stroke="Gray" StrokeThickness="3"></Line>
+        </Canvas>
+        <Button x:Name="AddNewCategoryButton" Content="Dodaj kategorię" HorizontalAlignment="Left" Height="42" Margin="10,222,0,0" VerticalAlignment="Top" Width="172" FontSize="20" Click="AddNewCategoryButton_Click"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="136.2,72,0,0" TextWrapping="Wrap" Text="FISZKI" VerticalAlignment="Top" FontSize="120" Height="181" Width="411" TextAlignment="Center">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.882"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <Image x:Name="flagEnglish" Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="376.2,306,0,0" VerticalAlignment="Top" Width="200"/>
+        <Image x:Name="flagPolish" Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="127.2,306,0,0" VerticalAlignment="Top" Width="200"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="182.2,237,0,0" TextWrapping="Wrap" Text="polsko-angielskie" TextAlignment="Center" VerticalAlignment="Top" Height="58" Width="319" FontSize="30" Foreground="#FF0058C7"/>
+
+    </Grid>
+</Page>

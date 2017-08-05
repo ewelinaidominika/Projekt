@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{14E5DA0F-E4D5-44B5-A271-B2782B8B788B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Fiszki</RootNamespace>
+    <AssemblyName>Fiszki</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Build" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AddNewCategory.xaml.cs">
+      <DependentUpon>AddNewCategory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewWord.xaml.cs">
+      <DependentUpon>AddNewWord.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Category.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SetPage.cs" />
+    <Compile Include="QuestionsRandomize.cs" />
+    <Compile Include="SetTestMode.xaml.cs">
+      <DependentUpon>SetTestMode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SetTrainingMode.xaml.cs">
+      <DependentUpon>SetTrainingMode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TestMode.xaml.cs">
+      <DependentUpon>TestMode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TestResult.xaml.cs">
+      <DependentUpon>TestResult.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingMode.xaml.cs">
+      <DependentUpon>TrainingMode.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AddNewCategory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddNewWord.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="SetTestMode.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SetTrainingMode.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TestMode.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TestResult.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TrainingMode.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="animals.txt" />
+    <Resource Include="appearance.txt" />
+    <Resource Include="colours.txt" />
+    <Resource Include="fruits.txt" />
+    <Resource Include="items.txt" />
+    <Resource Include="Photos\Animals\squirrel.bmp" />
+    <Resource Include="profession.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Photos\Fruits\grapefruit.bmp" />
+    <Resource Include="Photos\question_mark.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Photos\Fruits\apple.bmp" />
+    <Resource Include="Photos\Fruits\apricot.bmp" />
+    <Resource Include="Photos\Fruits\avocado.bmp" />
+    <Resource Include="Photos\Fruits\banana.bmp" />
+    <Resource Include="Photos\Fruits\blackberry.bmp" />
+    <Resource Include="Photos\Fruits\blueberry.bmp" />
+    <Resource Include="Photos\Fruits\cherry.bmp" />
+    <Resource Include="Photos\Fruits\coconut.bmp" />
+    <Resource Include="Photos\Fruits\currant.bmp" />
+    <Resource Include="Photos\Fruits\fig.bmp" />
+    <Resource Include="Photos\Fruits\gooseberry.bmp" />
+    <Resource Include="Photos\Fruits\lemon.bmp" />
+    <Resource Include="Photos\Fruits\lime.bmp" />
+    <Resource Include="Photos\Fruits\nectarine.bmp" />
+    <Resource Include="Photos\Fruits\orange.bmp" />
+    <Resource Include="Photos\Fruits\papaya.bmp" />
+    <Resource Include="Photos\Fruits\peach.bmp" />
+    <Resource Include="Photos\Fruits\pear.bmp" />
+    <Resource Include="Photos\Fruits\pineapple.bmp" />
+    <Resource Include="Photos\Fruits\raspberry.bmp" />
+    <Resource Include="Photos\Fruits\strawberry.bmp" />
+    <Resource Include="Photos\Fruits\tangerine.bmp" />
+    <Resource Include="Photos\Fruits\watermelon.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Photos\Fruits\grapes.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="myOwnCategories.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Photos\Animals\bat.bmp" />
+    <Resource Include="Photos\Animals\bear.bmp" />
+    <Resource Include="Photos\Animals\bull.bmp" />
+    <Resource Include="Photos\Animals\calf.bmp" />
+    <Resource Include="Photos\Animals\camel.bmp" />
+    <Resource Include="Photos\Animals\cat.bmp" />
+    <Resource Include="Photos\Animals\cheetah.bmp" />
+    <Resource Include="Photos\Animals\cow.bmp" />
+    <Resource Include="Photos\Animals\dog.bmp" />
+    <Resource Include="Photos\Animals\dolphin.bmp" />
+    <Resource Include="Photos\Animals\donkey.bmp" />
+    <Resource Include="Photos\Animals\elephant.bmp" />
+    <Resource Include="Photos\Animals\giraffe.bmp" />
+    <Resource Include="Photos\Animals\goat.bmp" />
+    <Resource Include="Photos\Animals\hare.bmp" />
+    <Resource Include="Photos\Animals\horse.bmp" />
+    <Resource Include="Photos\Animals\lamb.bmp" />
+    <Resource Include="Photos\Animals\lion.bmp" />
+    <Resource Include="Photos\Animals\monkey.bmp" />
+    <Resource Include="Photos\Animals\mouse.bmp" />
+    <Resource Include="Photos\Animals\pig.bmp" />
+    <Resource Include="Photos\Animals\rabbit.bmp" />
+    <Resource Include="Photos\Animals\rat.bmp" />
+    <Resource Include="Photos\Animals\sheep.bmp" />
+    <Resource Include="Photos\Animals\tiger.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Photos\Appearance\attractive.bmp" />
+    <Resource Include="Photos\Appearance\bald.bmp" />
+    <Resource Include="Photos\Appearance\beautiful.bmp" />
+    <Resource Include="Photos\Appearance\fashionable.bmp" />
+    <Resource Include="Photos\Appearance\fat.bmp" />
+    <Resource Include="Photos\Appearance\fit.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Photos\Appearance\handsome.bmp" />
+    <Resource Include="Photos\Appearance\longhaired.bmp" />
+    <Resource Include="Photos\Appearance\muscular.bmp" />
+    <Resource Include="Photos\Appearance\old.bmp" />
+    <Resource Include="Photos\Appearance\short.bmp" />
+    <Resource Include="Photos\Appearance\shorthaired.bmp" />
+    <Resource Include="Photos\Appearance\slim.bmp" />
+    <Resource Include="Photos\Appearance\smart.bmp" />
+    <Resource Include="Photos\Appearance\strong.bmp" />
+    <Resource Include="Photos\Appearance\tall.bmp" />
+    <Resource Include="Photos\Appearance\weak.bmp" />
+    <Resource Include="Photos\Appearance\young.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Photos\Appearance\pale.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Photos\Profession\accountant.bmp" />
+    <Resource Include="Photos\Profession\athlete.bmp" />
+    <Resource Include="Photos\Profession\baker.bmp" />
+    <Resource Include="Photos\Profession\butcher.bmp" />
+    <Resource Include="Photos\Profession\chemist.bmp" />
+    <Resource Include="Photos\Profession\cleaner.bmp" />
+    <Resource Include="Photos\Profession\cook.bmp" />
+    <Resource Include="Photos\Profession\dancer.bmp" />
+    <Resource Include="Photos\Profession\dentist.bmp" />
+    <Resource Include="Photos\Profession\doctor.bmp" />
+    <Resource Include="Photos\Profession\driver.bmp" />
+    <Resource Include="Photos\Profession\engineer.bmp" />
+    <Resource Include="Photos\Profession\farmer.bmp" />
+    <Resource Include="Photos\Profession\footballer.bmp" />
+    <Resource Include="Photos\Profession\guide.bmp" />
+    <Resource Include="Photos\Profession\manager.bmp" />
+    <Resource Include="Photos\Profession\mechanic.bmp" />
+    <Resource Include="Photos\Profession\nurse.bmp" />
+    <Resource Include="Photos\Profession\painter.bmp" />
+    <Resource Include="Photos\Profession\pilot.bmp" />
+    <Resource Include="Photos\Profession\programmer.bmp" />
+    <Resource Include="Photos\Profession\seller.bmp" />
+    <Resource Include="Photos\Profession\teacher.bmp" />
+    <Resource Include="Photos\Profession\waiter.bmp" />
+    <Resource Include="Photos\Profession\waitress.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Photos\ang.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Photos\pol.bmp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

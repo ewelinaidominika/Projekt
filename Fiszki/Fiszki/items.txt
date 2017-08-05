@@ -1,0 +1,2 @@
+komputer computer ..\..\Photos\question_mark.bmp
+klawiatura keyboard ..\..\Photos\question_mark.bmp

@@ -1,0 +1,54 @@
+﻿<Page x:Class="Fiszki.AddNewCategory"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Fiszki"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="900"
+      Title="AddNewCategory">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="197*"/>
+            <ColumnDefinition Width="704*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="0.094"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <Canvas Grid.Column="1" HorizontalAlignment="Left" Height="501" VerticalAlignment="Top" Width="28">
+            <Line X1="0" Y1="0" X2="0" Y2="500" Stroke="Gray" StrokeThickness="3"></Line>
+            <Line X1="5" Y1="0" X2="5" Y2="500" Stroke="Gray" StrokeThickness="3"></Line>
+        </Canvas>
+        <Button x:Name="BackToMainPage" Content="Strona główna" HorizontalAlignment="Left" Height="40" Margin="10,222,0,0" VerticalAlignment="Top" Width="172" Click="BackToMainPage_Click" FontSize="20"/>
+        <Button x:Name="SetTestMode" Content="Tryb testu" HorizontalAlignment="Left" Height="40" Margin="10,132,0,0" VerticalAlignment="Top" Width="172" FontSize="20" Click="SetTestMode_Click"/>
+        <Button x:Name="Exit" Content="Wyjście" HorizontalAlignment="Left" Margin="10,267,0,0" VerticalAlignment="Top" Width="172" Height="40" FontSize="20" Click="Exit_Click"/>
+        <Button x:Name="AddNewWord" Content="Dodaj swoje słowo"  HorizontalAlignment="Left" Height="40" Margin="10,177,0,0" VerticalAlignment="Top" Width="172" FontSize="20" Click="AddNewWord_Click"/>
+        <Label Content="DODAJ NOWĄ KATEGORIĘ" HorizontalAlignment="Left" Height="63" Margin="86.2,79,0,0" VerticalAlignment="Top" Width="534" FontSize="40" FontWeight="Bold" Grid.Column="1"/>
+        <Label Content="Nazwa polska:" Grid.Column="1" HorizontalAlignment="Left" Height="40" Margin="132.2,189,0,0" VerticalAlignment="Top" Width="182" FontSize="26"/>
+        <TextBox x:Name="PolishNameTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="40" Margin="407.2,189,0,0" TextWrapping="Wrap" Text="Polska" VerticalAlignment="Top" Width="139" FontSize="18" GotFocus="PolishNameTextBox_GotFocus"/>
+        <Label Content="Nazwa angielska:" Grid.Column="1" HorizontalAlignment="Left" Height="43" Margin="132.2,262,0,0" VerticalAlignment="Top" Width="214" FontSize="26"/>
+        <TextBox x:Name="EnglishNameTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="43" Margin="407.2,262,0,0" TextWrapping="Wrap" Text="Angielska" VerticalAlignment="Top" Width="139" FontSize="18" GotFocus="EnglishNameTextBox_GotFocus"/>
+        <Button x:Name="AddNewCategoryButton" Content="Dodaj" Grid.Column="1" HorizontalAlignment="Left" Height="40" Margin="482.2,426,0,0" VerticalAlignment="Top" Width="172" FontSize="20" Click="AddNewCategoryButton_Click"/>
+        <Label Grid.Column="1" HorizontalAlignment="Left" Height="66" Margin="188.2,345,0,0" VerticalAlignment="Top" Width="358">
+            <Label.Content>
+                <AccessText TextAlignment="Center" TextWrapping="Wrap" Text="Uwaga - nazwy kategorii muszą być rozpoczęte wielką literą oraz składać się z jednego słowa!" RenderTransformOrigin="0.476,-0.663" Height="56" Foreground="Red">
+                    <AccessText.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleX="-0.022"/>
+                            <RotateTransform/>
+                            <TranslateTransform X="0.014"/>
+                        </TransformGroup>
+                    </AccessText.RenderTransform>
+                </AccessText>
+            </Label.Content>
+        </Label>
+        <Button x:Name="SetTrainingMode" Content="Tryb treningu" HorizontalAlignment="Left" Height="40" Margin="10,87,0,0" VerticalAlignment="Top" Width="172" Click="SetTrainingMode_Click" FontSize="20"/>
+    </Grid>
+</Page>
